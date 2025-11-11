@@ -1,0 +1,36 @@
+2025-11-10 17:43:10,873 | INFO | Initialized PowerballModel with {"num_tickets": 5, "drawings_per_week": 3, "weeks": 4, "jackpot": 80000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-10 17:43:10,971 | INFO | Exported CSV to SoloMining_vs_Powerball_Project\Output\powerball_tiers.csv
+2025-11-10 17:43:10,974 | INFO | Exported PKL to SoloMining_vs_Powerball_Project\Output\powerball_scenario.pkl
+2025-11-10 17:50:36,127 | INFO | Initialized PowerballModel with {"num_tickets": 5, "drawings_per_week": 3, "weeks": 4, "jackpot": 80000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-10 17:50:36,204 | INFO | Exported CSV to SoloMining_vs_Powerball_Project\Output\powerball_tiers.csv
+2025-11-10 17:50:36,206 | INFO | Exported PKL to SoloMining_vs_Powerball_Project\Output\powerball_scenario.pkl
+2025-11-10 17:53:31,374 | INFO | Initialized PowerballModel with {"num_tickets": 30, "drawings_per_week": 3, "weeks": 4, "jackpot": 80000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-10 17:53:31,427 | INFO | Exported CSV to SoloMining_vs_Powerball_Project\Output\powerball_tiers.csv
+2025-11-10 17:53:31,429 | INFO | Exported PKL to SoloMining_vs_Powerball_Project\Output\powerball_scenario.pkl
+2025-11-10 17:54:17,792 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 4, "jackpot": 80000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-10 17:54:17,831 | INFO | Exported CSV to SoloMining_vs_Powerball_Project\Output\powerball_tiers.csv
+2025-11-10 17:54:17,832 | INFO | Exported PKL to SoloMining_vs_Powerball_Project\Output\powerball_scenario.pkl
+2025-11-10 20:15:53,658 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-10 20:15:53,702 | INFO | Exported CSV to SoloMining_vs_Powerball_Project\Output\powerball_example.csv
+2025-11-10 20:15:53,703 | INFO | Exported PKL to SoloMining_vs_Powerball_Project\Output\powerball_example.pkl
+2025-11-10 20:17:03,210 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-10 20:17:03,230 | INFO | Exported CSV to SoloMining_vs_Powerball_Project\Output\powerball_example.csv
+2025-11-10 20:17:03,232 | INFO | Exported PKL to SoloMining_vs_Powerball_Project\Output\powerball_example.pkl
+2025-11-10 20:17:26,453 | INFO | Initialized PowerballModel with {"num_tickets": 100, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-10 20:17:26,469 | INFO | Exported CSV to SoloMining_vs_Powerball_Project\Output\powerball_example.csv
+2025-11-10 20:17:26,470 | INFO | Exported PKL to SoloMining_vs_Powerball_Project\Output\powerball_example.pkl
+2025-11-10 20:20:21,129 | INFO | Initialized PowerballModel with {"num_tickets": 100, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-10 20:20:21,145 | INFO | Exported CSV to SoloMining_vs_Powerball_Project\Output\powerball_example.csv
+2025-11-10 20:20:21,146 | INFO | Exported PKL to SoloMining_vs_Powerball_Project\Output\powerball_example.pkl
+2025-11-10 20:22:23,756 | INFO | Initialized PowerballModel with {"num_tickets": 100, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-10 20:22:23,775 | INFO | Exported CSV to SoloMining_vs_Powerball_Project\Output\powerball_example.csv
+2025-11-10 20:22:23,776 | INFO | Exported PKL to SoloMining_vs_Powerball_Project\Output\powerball_example.pkl
+2025-11-10 20:22:36,819 | INFO | Initialized PowerballModel with {"num_tickets": 100, "drawings_per_week": 3, "weeks": 8, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-10 20:22:36,836 | INFO | Exported CSV to SoloMining_vs_Powerball_Project\Output\powerball_example.csv
+2025-11-10 20:22:36,837 | INFO | Exported PKL to SoloMining_vs_Powerball_Project\Output\powerball_example.pkl
+2025-11-10 20:23:29,499 | INFO | Initialized PowerballModel with {"num_tickets": 10000, "drawings_per_week": 3, "weeks": 8, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-10 20:23:29,521 | INFO | Exported CSV to SoloMining_vs_Powerball_Project\Output\powerball_example.csv
+2025-11-10 20:23:29,521 | INFO | Exported PKL to SoloMining_vs_Powerball_Project\Output\powerball_example.pkl
+2025-11-10 20:23:58,239 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-10 20:23:58,256 | INFO | Exported CSV to SoloMining_vs_Powerball_Project\Output\powerball_example.csv
+2025-11-10 20:23:58,256 | INFO | Exported PKL to SoloMining_vs_Powerball_Project\Output\powerball_example.pkl
