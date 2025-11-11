@@ -8,7 +8,7 @@ module_name_gl = "main"
 Version: v1.0
 
 Description:
-    CLI workflow for the Solo Mining vs Powerball project. Prompts the user for
+    command line workflow for the Solo Mining vs Powerball project. Prompts the user for
     mining inputs, prints summaries, and generates supporting tables/plots.
 
 Authors:

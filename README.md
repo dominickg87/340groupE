@@ -1,2 +1,0 @@
-# 340groupE
-py project
