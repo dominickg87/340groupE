@@ -1,0 +1,6 @@
+# Local-only documentation
+README.md
+
+# Python cache directories
+__pycache__/
+*.pyc
