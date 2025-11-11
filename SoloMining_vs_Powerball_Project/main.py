@@ -1,7 +1,29 @@
-"""Run the solo mining calculator with simple user interaction."""
+#Version: v1.0
+#Date Last Updated: 1-12-2025
 
+#%% MODULE BEGINS
+module_name_gl = "main"
+
+"""
+Version: v1.0
+
+Description:
+    CLI workflow for the Solo Mining vs Powerball project. Prompts the user for
+    mining inputs, prints summaries, and generates supporting tables/plots.
+
+Authors:
+    Group E
+
+Date Created     :  2025-11-10
+Date Last Updated:  2025-01-12
+
+Doc:
+    Refer to DomNotes.md for detailed usage instructions.
+"""
+
+#%% IMPORTS                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from __future__ import annotations
-from lottery_models import PowerballScenario, PowerballModel
+
 from pathlib import Path
 from typing import List
 
@@ -9,13 +31,17 @@ import pandas as pd
 
 from config import APP_VERSION
 from lib.module import LOGGER, write_csv
+from lottery_models import PowerballModel, PowerballScenario
 from mining_models import SoloMiningModel
 from viz_base import VizBase
 
+
+#%% CONSTANTS                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 PROJECT_ROOT = Path(__file__).resolve().parent
 OUTPUT_TABLES = PROJECT_ROOT / "Output" / "tables"
 
 
+#%% FUNCTION DEFINITIONS        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def prompt_float(prompt: str) -> float:
     """Keep asking the user for a number until they provide a valid value."""
     while True:
@@ -54,6 +80,11 @@ def build_scenarios(hashrate: float, days: float) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def run_powerball_demo() -> None:
+    """Helper for manually running the Powerball scenario demo."""
+    run_powerball()
+
+
 def main() -> None:
     """Entry point used by the CLI."""
     print("===================================")
@@ -75,7 +106,7 @@ def main() -> None:
         scenario_df["probability_at_least_one"],
         title="Probability vs Hashrate",
         xlabel="Miner Hashrate (TH/s)",
-        ylabel="Probability of Finding ≥1 Block",
+        ylabel="Probability of Finding >=1 Block",
         filename="probability_vs_hashrate.png",
     )
     print(f"Saved probability plot to: {plot_path}")
@@ -90,7 +121,10 @@ def main() -> None:
         "Session complete for hashrate=%.2f TH/s, days=%.2f", miner_hashrate, days
     )
 
+
+#%% PARTNER POWERBALL LOGIC    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def run_powerball():
+    """Original Powerball demo contributed by partner code."""
     sc = PowerballScenario(
         num_tickets=10,
         drawings_per_week=3,
@@ -101,15 +135,15 @@ def run_powerball():
     model = PowerballModel(sc)
     df = model.to_dataframe()
     print(df)
-    print(f"EV per ticket: {round(model.expected_value_per_ticket(),2)}$")
-    print(f"Total EV for scenario: {round(model.expected_value_total(),2)}$")
-    print("P(≥1 jackpot):", model.prob_at_least_one_jackpot())
-    print("P(≥1 any):", model.prob_at_least_one_any_prize())
+    print(f"EV per ticket: {round(model.expected_value_per_ticket(), 2)}$")
+    print(f"Total EV for scenario: {round(model.expected_value_total(), 2)}$")
+    print("P(>=1 jackpot):", model.prob_at_least_one_jackpot())
+    print("P(>=1 any):", model.prob_at_least_one_any_prize())
     model.export_csv("powerball_example.csv")
     model.export_pickle("powerball_example.pkl")
 
-if __name__ == "__main__":
-    run_powerball()
 
+#%% SELF-RUN                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if __name__ == "__main__":
+    print(f'"{module_name_gl}" module begins.')
     main()
