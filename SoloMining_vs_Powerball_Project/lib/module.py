@@ -7,8 +7,9 @@ import math
 import os
 import pickle
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, Sequence
 
+import numpy as np
 import pandas as pd
 
 # Determine paths relative to the project root so imports work from anywhere.
@@ -96,6 +97,13 @@ def load_pickle(path: os.PathLike | str) -> Optional[Any]:
     return None
 
 
+def log_messages(*messages: str) -> None:
+    """Log an arbitrary number of message fragments on one INFO line."""
+    if not messages:
+        return
+    LOGGER.info(" | ".join(messages))
+
+
 def safe_eval(expr: str, variables_dict: Optional[Dict[str, Any]] = None) -> Any:
     """Evaluate math expressions safely using a limited namespace."""
     allowed_names = {name: getattr(math, name) for name in dir(math) if not name.startswith("_")}
@@ -109,3 +117,23 @@ def safe_eval(expr: str, variables_dict: Optional[Dict[str, Any]] = None) -> Any
         LOGGER.error("Failed to eval expression %s: %s", expr, exc)
         print(f"Error evaluating expression '{expr}': {exc}")
         return None
+
+
+def array_to_dataframe(
+    array: np.ndarray,
+    columns: Sequence[str],
+    index: Optional[Sequence[Any]] = None,
+) -> pd.DataFrame:
+    """Convert an m×n NumPy array into a pandas DataFrame."""
+    arr = np.asarray(array)
+    if arr.ndim != 2:
+        raise ValueError("array_to_dataframe expects a 2D array")
+    if len(columns) != arr.shape[1]:
+        raise ValueError("Column count does not match array width")
+
+    df = pd.DataFrame(arr, columns=list(columns))
+    if index is not None:
+        if len(index) != arr.shape[0]:
+            raise ValueError("Index length does not match array height")
+        df.index = list(index)
+    return df

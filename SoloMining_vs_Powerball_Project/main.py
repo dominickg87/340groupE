@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 #Version: v1.0
 #Date Last Updated: 1-12-2025
 
@@ -22,15 +24,15 @@ Doc:
 """
 
 #%% IMPORTS                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from __future__ import annotations
 
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 
+import numpy as np
 import pandas as pd
 
 from config import APP_VERSION
-from lib.module import LOGGER, write_csv
+from lib.module import LOGGER, array_to_dataframe, write_csv
 from lottery_models import PowerballModel, PowerballScenario
 from mining_models import SoloMiningModel
 from viz_base import VizBase
@@ -52,7 +54,14 @@ def prompt_float(prompt: str) -> float:
             print("Please enter a numeric value.")
 
 
-def build_scenarios(hashrate: float, days: float) -> pd.DataFrame:
+def build_scenarios(
+    hashrate: float,
+    days: float,
+    *,
+    btc_price: Optional[float] = None,
+    block_reward_btc: Optional[float] = None,
+    electricity_rate: Optional[float] = None,
+) -> pd.DataFrame:
     """Generate simple hashrate test cases so users can see how odds change."""
     sample_hashrates: List[float] = [
         max(0.1, hashrate * 0.5),
@@ -65,7 +74,15 @@ def build_scenarios(hashrate: float, days: float) -> pd.DataFrame:
 
     rows = []
     for h in sorted(set(round(val, 4) for val in sample_hashrates)):
-        model = SoloMiningModel(h, days)
+        model_kwargs = {}
+        if btc_price is not None:
+            model_kwargs["price"] = btc_price
+        if electricity_rate is not None:
+            model_kwargs["rate"] = electricity_rate
+        if block_reward_btc is not None:
+            model_kwargs["block_reward_btc"] = block_reward_btc
+
+        model = SoloMiningModel(h, days, **model_kwargs)
         lam = model.compute_lambda()
         probability = model.mining_probability()
         expected = model.expected_value()
@@ -77,7 +94,18 @@ def build_scenarios(hashrate: float, days: float) -> pd.DataFrame:
                 "expected_value_usd": expected,
             }
         )
-    return pd.DataFrame(rows)
+
+    columns = [
+        "hashrate_ths",
+        "lambda",
+        "probability_at_least_one",
+        "expected_value_usd",
+    ]
+    if not rows:
+        matrix = np.empty((0, len(columns)))
+    else:
+        matrix = np.array([[row[col] for col in columns] for row in rows], dtype=float)
+    return array_to_dataframe(matrix, columns)
 
 
 def run_powerball_demo() -> None:
@@ -112,7 +140,8 @@ def main() -> None:
     print(f"Saved probability plot to: {plot_path}")
 
     csv_path = OUTPUT_TABLES / "probability_vs_hashrate.csv"
-    if write_csv(scenario_df, csv_path):
+    export_df = array_to_dataframe(scenario_df.to_numpy(), list(scenario_df.columns))
+    if write_csv(export_df, csv_path):
         print(f"Saved scenario table to: {csv_path}")
     else:
         print("Failed to save the scenario table. See logs for details.")

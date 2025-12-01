@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 #Version: v1.0
 #Date Last Updated: 1-12-2025
 
@@ -22,7 +24,6 @@ Doc:
 """
 
 #%% IMPORTS                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from __future__ import annotations
 
 from config import (
     BLOCK_REWARD_BTC,
@@ -43,12 +44,14 @@ class SoloMiningModel(ProbabilityBase):
         days: float,
         price: float = BTC_PRICE_USD,
         rate: float = ELECTRICITY_RATE,
+        block_reward_btc: float = BLOCK_REWARD_BTC,
     ) -> None:
         # Store the miner's hashrate and other settings for later calculations.
         self.miner_hashrate_ths = float(miner_hashrate_ths)
         self.days = float(days)
         self.price = float(price)
         self.rate = float(rate)  # Placeholder for future electricity cost modeling.
+        self.block_reward_btc = float(block_reward_btc)
 
     def compute_lambda(self) -> float:
         """Return the expected number of blocks the miner might find."""
@@ -63,14 +66,14 @@ class SoloMiningModel(ProbabilityBase):
     def expected_value(self) -> float:
         """Return the expected mining payout in USD."""
         probability = self.mining_probability()
-        reward_value = BLOCK_REWARD_BTC * self.price
+        reward_value = self.block_reward_btc * self.price
         return probability * reward_value
 
     def print_summary(self) -> None:
         """Display a simple summary for the console."""
         lam = self.compute_lambda()
         probability = self.prob_at_least_one(lam)
-        reward_value = BLOCK_REWARD_BTC * self.price
+        reward_value = self.block_reward_btc * self.price
         expected_usd = probability * reward_value
 
         print("\n--- Solo Mining Summary ---")

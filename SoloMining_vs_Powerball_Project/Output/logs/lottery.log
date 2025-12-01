@@ -34,3 +34,23 @@
 2025-11-10 20:23:58,239 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
 2025-11-10 20:23:58,256 | INFO | Exported CSV to SoloMining_vs_Powerball_Project\Output\powerball_example.csv
 2025-11-10 20:23:58,256 | INFO | Exported PKL to SoloMining_vs_Powerball_Project\Output\powerball_example.pkl
+2025-11-30 17:05:25,859 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 17:07:06,686 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 17:08:08,769 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 17:13:53,383 | INFO | Initialized PowerballModel with {"num_tickets": 1, "drawings_per_week": 1, "weeks": 1, "jackpot": 10000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 17:15:05,086 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 17:15:29,759 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 18:35:37,340 | INFO | Initialized PowerballModel with {"num_tickets": 1, "drawings_per_week": 1, "weeks": 1, "jackpot": 10000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 18:35:40,000 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 18:35:40,730 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 18:35:41,259 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 18:56:28,775 | INFO | Initialized PowerballModel with {"num_tickets": 1, "drawings_per_week": 1, "weeks": 1, "jackpot": 10000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 18:56:35,144 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 19:01:11,170 | INFO | Initialized PowerballModel with {"num_tickets": 1, "drawings_per_week": 1, "weeks": 1, "jackpot": 10000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 19:03:42,503 | INFO | Initialized PowerballModel with {"num_tickets": 1, "drawings_per_week": 1, "weeks": 1, "jackpot": 10000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 19:06:15,165 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 19:07:20,240 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 19:23:49,050 | INFO | Initialized PowerballModel with {"num_tickets": 1, "drawings_per_week": 1, "weeks": 1, "jackpot": 10000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 19:29:08,986 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 19:29:22,828 | INFO | Initialized PowerballModel with {"num_tickets": 1, "drawings_per_week": 1, "weeks": 1, "jackpot": 10000000.0, "ticket_cost": 2.0, "payouts": null}
+2025-11-30 19:30:26,411 | INFO | Initialized PowerballModel with {"num_tickets": 10, "drawings_per_week": 3, "weeks": 2, "jackpot": 120000000.0, "ticket_cost": 2.0, "payouts": null}

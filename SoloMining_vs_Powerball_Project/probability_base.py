@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 #Version: v1.0
 #Date Last Updated: 1-12-2025
 
@@ -24,7 +26,6 @@ Notes:
 """
 
 #%% IMPORTS                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from __future__ import annotations
 
 import math
 from typing import Any, Iterable, Sequence
